@@ -1,20 +1,19 @@
 package com.drpeng.sec.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class SecOrganize {
-    private Long organizeId;
+    private int organizeId;
 
     private String organizeName;
 
     private String code;
 
-    private Long parentOrganizeId;
+    private int parentOrganizeId;
 
-    private Long orgRoleTypeId;
+    private int orgRoleTypeId;
 
-    private BigDecimal districtId;
+    private int districtId;
 
     private String shortName;
 
@@ -36,15 +35,15 @@ public class SecOrganize {
 
     private String contactBillId;
 
-    private Short orgLevel;
+    private int orgLevel;
 
-    private Short isChannel;
+    private int isChannel;
 
     private String notes;
 
-    private Short state;
+    private int state;
 
-    private Long doneCode;
+    private int doneCode;
 
     private Date createDate;
 
@@ -54,15 +53,15 @@ public class SecOrganize {
 
     private Date expireDate;
 
-    private Long opId;
+    private int opId;
 
-    private Long orgId;
+    private int orgId;
 
-    public Long getOrganizeId() {
+    public int getOrganizeId() {
         return organizeId;
     }
 
-    public void setOrganizeId(Long organizeId) {
+    public void setOrganizeId(int organizeId) {
         this.organizeId = organizeId;
     }
 
@@ -82,27 +81,27 @@ public class SecOrganize {
         this.code = code == null ? null : code.trim();
     }
 
-    public Long getParentOrganizeId() {
+    public int getParentOrganizeId() {
         return parentOrganizeId;
     }
 
-    public void setParentOrganizeId(Long parentOrganizeId) {
+    public void setParentOrganizeId(int parentOrganizeId) {
         this.parentOrganizeId = parentOrganizeId;
     }
 
-    public Long getOrgRoleTypeId() {
+    public int getOrgRoleTypeId() {
         return orgRoleTypeId;
     }
 
-    public void setOrgRoleTypeId(Long orgRoleTypeId) {
+    public void setOrgRoleTypeId(int orgRoleTypeId) {
         this.orgRoleTypeId = orgRoleTypeId;
     }
 
-    public BigDecimal getDistrictId() {
+    public int getDistrictId() {
         return districtId;
     }
 
-    public void setDistrictId(BigDecimal districtId) {
+    public void setDistrictId(int districtId) {
         this.districtId = districtId;
     }
 
@@ -186,19 +185,19 @@ public class SecOrganize {
         this.contactBillId = contactBillId == null ? null : contactBillId.trim();
     }
 
-    public Short getOrgLevel() {
+    public int getOrgLevel() {
         return orgLevel;
     }
 
-    public void setOrgLevel(Short orgLevel) {
+    public void setOrgLevel(int orgLevel) {
         this.orgLevel = orgLevel;
     }
 
-    public Short getIsChannel() {
+    public int getIsChannel() {
         return isChannel;
     }
 
-    public void setIsChannel(Short isChannel) {
+    public void setIsChannel(int isChannel) {
         this.isChannel = isChannel;
     }
 
@@ -210,19 +209,19 @@ public class SecOrganize {
         this.notes = notes == null ? null : notes.trim();
     }
 
-    public Short getState() {
+    public int getState() {
         return state;
     }
 
-    public void setState(Short state) {
+    public void setState(int state) {
         this.state = state;
     }
 
-    public Long getDoneCode() {
+    public int getDoneCode() {
         return doneCode;
     }
 
-    public void setDoneCode(Long doneCode) {
+    public void setDoneCode(int doneCode) {
         this.doneCode = doneCode;
     }
 
@@ -258,19 +257,19 @@ public class SecOrganize {
         this.expireDate = expireDate;
     }
 
-    public Long getOpId() {
+    public int getOpId() {
         return opId;
     }
 
-    public void setOpId(Long opId) {
+    public void setOpId(int opId) {
         this.opId = opId;
     }
 
-    public Long getOrgId() {
+    public int getOrgId() {
         return orgId;
     }
 
-    public void setOrgId(Long orgId) {
+    public void setOrgId(int orgId) {
         this.orgId = orgId;
     }
 }

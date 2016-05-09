@@ -1,15 +1,17 @@
 package com.drpeng.sec.dao;
 
 
+import com.drpeng.sec.common.PageData;
 import com.drpeng.sec.entity.SecOrganize;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface ISecOrganizeDAO {
 
-    public List<SecOrganize> findAll();
+    public List<PageData> organizeList(PageData parameterMap);
 
     public boolean insert(SecOrganize organize);
 
