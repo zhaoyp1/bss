@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.drpeng.sec.dao.SecOperatorMapper" >
-  <resultMap id="BaseResultMap" type="com.drpeng.sec.model.SecOperator" >
+<mapper namespace="com.drpeng.sec.dao.ISecOperatorDAO" >
+  <resultMap id="BaseResultMap" type="com.drpeng.sec.entity.SecOperator" >
     <id column="OPERATOR_ID" property="operatorId" jdbcType="INTEGER" />
     <result column="STAFF_ID" property="staffId" jdbcType="INTEGER" />
     <result column="CODE" property="code" jdbcType="VARCHAR" />
