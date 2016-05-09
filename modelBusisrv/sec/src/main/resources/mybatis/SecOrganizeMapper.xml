@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drpeng.sec.dao.ISecOrganizeDAO" >
+
+  <resultMap id="BaseResultMap" type="com.drpeng.sec.entity.SecOrganize" >
+    <id column="ORGANIZE_ID" property="organizeId" jdbcType="DECIMAL" />
+    <result column="ORGANIZE_NAME" property="organizeName" jdbcType="VARCHAR" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="PARENT_ORGANIZE_ID" property="parentOrganizeId" jdbcType="DECIMAL" />
+    <result column="ORG_ROLE_TYPE_ID" property="orgRoleTypeId" jdbcType="DECIMAL" />
+    <result column="DISTRICT_ID" property="districtId" jdbcType="DECIMAL" />
+    <result column="SHORT_NAME" property="shortName" jdbcType="VARCHAR" />
+    <result column="ENGLISH_NAME" property="englishName" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="PHONE_ID" property="phoneId" jdbcType="VARCHAR" />
+    <result column="FAX_ID" property="faxId" jdbcType="VARCHAR" />
+    <result column="ORG_ADDRESS" property="orgAddress" jdbcType="VARCHAR" />
+    <result column="CONTACT_NAME" property="contactName" jdbcType="VARCHAR" />
+    <result column="CONTACT_CARD_TYPE" property="contactCardType" jdbcType="VARCHAR" />
+    <result column="CONTACT_CARD_ID" property="contactCardId" jdbcType="VARCHAR" />
+    <result column="CONTACT_BILL_ID" property="contactBillId" jdbcType="VARCHAR" />
+    <result column="ORG_LEVEL" property="orgLevel" jdbcType="DECIMAL" />
+    <result column="IS_CHANNEL" property="isChannel" jdbcType="DECIMAL" />
+    <result column="NOTES" property="notes" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="DECIMAL" />
+    <result column="DONE_CODE" property="doneCode" jdbcType="DECIMAL" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="DONE_DATE" property="doneDate" jdbcType="TIMESTAMP" />
+    <result column="VALID_DATE" property="validDate" jdbcType="TIMESTAMP" />
+    <result column="EXPIRE_DATE" property="expireDate" jdbcType="TIMESTAMP" />
+    <result column="OP_ID" property="opId" jdbcType="DECIMAL" />
+    <result column="ORG_ID" property="orgId" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ORGANIZE_ID, ORGANIZE_NAME, CODE, PARENT_ORGANIZE_ID, ORG_ROLE_TYPE_ID, DISTRICT_ID, 
+    SHORT_NAME, ENGLISH_NAME, EMAIL, PHONE_ID, FAX_ID, ORG_ADDRESS, CONTACT_NAME, CONTACT_CARD_TYPE, 
+    CONTACT_CARD_ID, CONTACT_BILL_ID, ORG_LEVEL, IS_CHANNEL, NOTES, STATE, DONE_CODE, 
+    CREATE_DATE, DONE_DATE, VALID_DATE, EXPIRE_DATE, OP_ID, ORG_ID
+  </sql>
+   <select id="findAll" parameterType="com.drpeng.sec.entity.SecOrganize" resultMap="BaseResultMap">
+      SELECT * FROM SEC_ORGANIZE
+
+   </select>
+</mapper>
