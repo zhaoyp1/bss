@@ -3,19 +3,19 @@ package com.drpeng.sec.entity;
 import java.util.Date;
 
 public class SecOperator {
-    private Integer operatorId;
+    private int operatorId;
 
-    private Integer staffId;
+    private int staffId;
 
     private String code;
 
     private String password;
 
-    private Integer securityId;
+    private int securityId;
 
     private String recentPassword;
 
-    private Integer recentPassTimes;
+    private int recentPassTimes;
 
     private String allowChangePassword;
 
@@ -23,9 +23,9 @@ public class SecOperator {
 
     private Date acctExpireDate;
 
-    private Integer lastLoginLogId;
+    private int lastLoginLogId;
 
-    private Integer tryTimes;
+    private int tryTimes;
 
     private String lockFlag;
 
@@ -33,23 +33,23 @@ public class SecOperator {
 
     private Date passwordValidDate;
 
-    private Integer chgPasswdAlarmDays;
+    private int chgPasswdAlarmDays;
 
     private String ipmacFlag;
 
     private Long isVpnLoginFlag;
 
-    private Integer chgPasswdFlag;
+    private int chgPasswdFlag;
 
     private String isLogin;
 
     private String notes;
 
-    private Integer cancelDays;
+    private int cancelDays;
 
-    private Integer state;
+    private int state;
 
-    private Integer doneCode;
+    private int doneCode;
 
     private Date createDate;
 
@@ -59,23 +59,23 @@ public class SecOperator {
 
     private Date expireDate;
 
-    private Integer opId;
+    private int opId;
 
-    private Integer orgId;
+    private int orgId;
 
-    public Integer getOperatorId() {
+    public int getOperatorId() {
         return operatorId;
     }
 
-    public void setOperatorId(Integer operatorId) {
+    public void setOperatorId(int operatorId) {
         this.operatorId = operatorId;
     }
 
-    public Integer getStaffId() {
+    public int getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(Integer staffId) {
+    public void setStaffId(int staffId) {
         this.staffId = staffId;
     }
 
@@ -95,11 +95,11 @@ public class SecOperator {
         this.password = password == null ? null : password.trim();
     }
 
-    public Integer getSecurityId() {
+    public int getSecurityId() {
         return securityId;
     }
 
-    public void setSecurityId(Integer securityId) {
+    public void setSecurityId(int securityId) {
         this.securityId = securityId;
     }
 
@@ -111,11 +111,11 @@ public class SecOperator {
         this.recentPassword = recentPassword == null ? null : recentPassword.trim();
     }
 
-    public Integer getRecentPassTimes() {
+    public int getRecentPassTimes() {
         return recentPassTimes;
     }
 
-    public void setRecentPassTimes(Integer recentPassTimes) {
+    public void setRecentPassTimes(int recentPassTimes) {
         this.recentPassTimes = recentPassTimes;
     }
 
@@ -143,19 +143,19 @@ public class SecOperator {
         this.acctExpireDate = acctExpireDate;
     }
 
-    public Integer getLastLoginLogId() {
+    public int getLastLoginLogId() {
         return lastLoginLogId;
     }
 
-    public void setLastLoginLogId(Integer lastLoginLogId) {
+    public void setLastLoginLogId(int lastLoginLogId) {
         this.lastLoginLogId = lastLoginLogId;
     }
 
-    public Integer getTryTimes() {
+    public int getTryTimes() {
         return tryTimes;
     }
 
-    public void setTryTimes(Integer tryTimes) {
+    public void setTryTimes(int tryTimes) {
         this.tryTimes = tryTimes;
     }
 
@@ -183,11 +183,11 @@ public class SecOperator {
         this.passwordValidDate = passwordValidDate;
     }
 
-    public Integer getChgPasswdAlarmDays() {
+    public int getChgPasswdAlarmDays() {
         return chgPasswdAlarmDays;
     }
 
-    public void setChgPasswdAlarmDays(Integer chgPasswdAlarmDays) {
+    public void setChgPasswdAlarmDays(int chgPasswdAlarmDays) {
         this.chgPasswdAlarmDays = chgPasswdAlarmDays;
     }
 
@@ -207,11 +207,11 @@ public class SecOperator {
         this.isVpnLoginFlag = isVpnLoginFlag;
     }
 
-    public Integer getChgPasswdFlag() {
+    public int getChgPasswdFlag() {
         return chgPasswdFlag;
     }
 
-    public void setChgPasswdFlag(Integer chgPasswdFlag) {
+    public void setChgPasswdFlag(int chgPasswdFlag) {
         this.chgPasswdFlag = chgPasswdFlag;
     }
 
@@ -231,27 +231,27 @@ public class SecOperator {
         this.notes = notes == null ? null : notes.trim();
     }
 
-    public Integer getCancelDays() {
+    public int getCancelDays() {
         return cancelDays;
     }
 
-    public void setCancelDays(Integer cancelDays) {
+    public void setCancelDays(int cancelDays) {
         this.cancelDays = cancelDays;
     }
 
-    public Integer getState() {
+    public int getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(int state) {
         this.state = state;
     }
 
-    public Integer getDoneCode() {
+    public int getDoneCode() {
         return doneCode;
     }
 
-    public void setDoneCode(Integer doneCode) {
+    public void setDoneCode(int doneCode) {
         this.doneCode = doneCode;
     }
 
@@ -287,19 +287,19 @@ public class SecOperator {
         this.expireDate = expireDate;
     }
 
-    public Integer getOpId() {
+    public int getOpId() {
         return opId;
     }
 
-    public void setOpId(Integer opId) {
+    public void setOpId(int opId) {
         this.opId = opId;
     }
 
-    public Integer getOrgId() {
+    public int getOrgId() {
         return orgId;
     }
 
-    public void setOrgId(Integer orgId) {
+    public void setOrgId(int orgId) {
         this.orgId = orgId;
     }
 }

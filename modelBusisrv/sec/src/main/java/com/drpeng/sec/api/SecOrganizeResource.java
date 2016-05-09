@@ -1,6 +1,7 @@
 package com.drpeng.sec.api;
 
 import com.alibaba.fastjson.JSON;
+import com.drpeng.sec.common.PageData;
 import com.drpeng.sec.entity.SecOrganize;
 import com.drpeng.sec.service.ISecOrganizeService;
 import org.springframework.stereotype.Component;
@@ -27,7 +28,7 @@ public class SecOrganizeResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public String findAllUsers(){
 
-        List<SecOrganize> secOrganizes= secOrganizeService.findAllSecOrganize(null);
+        List<PageData> secOrganizes= secOrganizeService.findAllSecOrganize(null);
         String result= JSON.toJSONString(secOrganizes);
         return  result;
     }

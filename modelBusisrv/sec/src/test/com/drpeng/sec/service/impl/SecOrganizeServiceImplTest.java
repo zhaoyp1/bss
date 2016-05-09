@@ -1,6 +1,7 @@
 package com.drpeng.sec.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.drpeng.sec.common.PageData;
 import com.drpeng.sec.entity.SecOrganize;
 import com.drpeng.sec.service.ISecOrganizeService;
 import org.junit.Test;
@@ -14,7 +15,6 @@ import javax.annotation.Resource;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
 
 /**
  * Created by zhaoyp on 2016/5/5.
@@ -24,10 +24,13 @@ import static org.junit.Assert.*;
 public class SecOrganizeServiceImplTest {
     private static Logger logger = LoggerFactory.getLogger(SecOrganizeServiceImplTest.class);
     @Resource
-    private ISecOrganizeService secOrganizeService = null;
+    private ISecOrganizeService secOrganizeService;
     @Test
     public void findAllSecOrganize() throws Exception {
-        List<SecOrganize> secOrganizeList= secOrganizeService.findAllSecOrganize(null);
+        PageData pageDate = new PageData();
+        //pageDate.put("startIndex","1");
+        //pageDate.put("pageSize","2");
+        List<PageData> secOrganizeList= secOrganizeService.findAllSecOrganize(pageDate);
         logger.info(JSON.toJSONString(secOrganizeList));
     }
 
