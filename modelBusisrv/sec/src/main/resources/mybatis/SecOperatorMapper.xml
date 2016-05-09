@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drpeng.sec.dao.SecOperatorMapper" >
+  <resultMap id="BaseResultMap" type="com.drpeng.sec.model.SecOperator" >
+    <id column="OPERATOR_ID" property="operatorId" jdbcType="INTEGER" />
+    <result column="STAFF_ID" property="staffId" jdbcType="INTEGER" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="SECURITY_ID" property="securityId" jdbcType="INTEGER" />
+    <result column="RECENT_PASSWORD" property="recentPassword" jdbcType="VARCHAR" />
+    <result column="RECENT_PASS_TIMES" property="recentPassTimes" jdbcType="INTEGER" />
+    <result column="ALLOW_CHANGE_PASSWORD" property="allowChangePassword" jdbcType="VARCHAR" />
+    <result column="ACCT_EFFECT_DATE" property="acctEffectDate" jdbcType="TIMESTAMP" />
+    <result column="ACCT_EXPIRE_DATE" property="acctExpireDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_LOGIN_LOG_ID" property="lastLoginLogId" jdbcType="INTEGER" />
+    <result column="TRY_TIMES" property="tryTimes" jdbcType="INTEGER" />
+    <result column="LOCK_FLAG" property="lockFlag" jdbcType="VARCHAR" />
+    <result column="LOGIN_CHANNEL" property="loginChannel" jdbcType="DECIMAL" />
+    <result column="PASSWORD_VALID_DATE" property="passwordValidDate" jdbcType="TIMESTAMP" />
+    <result column="CHG_PASSWD_ALARM_DAYS" property="chgPasswdAlarmDays" jdbcType="INTEGER" />
+    <result column="IPMAC_FLAG" property="ipmacFlag" jdbcType="VARCHAR" />
+    <result column="IS_VPN_LOGIN_FLAG" property="isVpnLoginFlag" jdbcType="DECIMAL" />
+    <result column="CHG_PASSWD_FLAG" property="chgPasswdFlag" jdbcType="INTEGER" />
+    <result column="IS_LOGIN" property="isLogin" jdbcType="VARCHAR" />
+    <result column="NOTES" property="notes" jdbcType="VARCHAR" />
+    <result column="CANCEL_DAYS" property="cancelDays" jdbcType="INTEGER" />
+    <result column="STATE" property="state" jdbcType="INTEGER" />
+    <result column="DONE_CODE" property="doneCode" jdbcType="INTEGER" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="DONE_DATE" property="doneDate" jdbcType="TIMESTAMP" />
+    <result column="VALID_DATE" property="validDate" jdbcType="TIMESTAMP" />
+    <result column="EXPIRE_DATE" property="expireDate" jdbcType="TIMESTAMP" />
+    <result column="OP_ID" property="opId" jdbcType="INTEGER" />
+    <result column="ORG_ID" property="orgId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    OPERATOR_ID, STAFF_ID, CODE, PASSWORD, SECURITY_ID, RECENT_PASSWORD, RECENT_PASS_TIMES, 
+    ALLOW_CHANGE_PASSWORD, ACCT_EFFECT_DATE, ACCT_EXPIRE_DATE, LAST_LOGIN_LOG_ID, TRY_TIMES, 
+    LOCK_FLAG, LOGIN_CHANNEL, PASSWORD_VALID_DATE, CHG_PASSWD_ALARM_DAYS, IPMAC_FLAG, 
+    IS_VPN_LOGIN_FLAG, CHG_PASSWD_FLAG, IS_LOGIN, NOTES, CANCEL_DAYS, STATE, DONE_CODE, 
+    CREATE_DATE, DONE_DATE, VALID_DATE, EXPIRE_DATE, OP_ID, ORG_ID
+  </sql>
+  <select id="findAll" resultMap="BaseResultMap" parameterType="com.drpeng.sec.entity.SecOperator">
+    select
+    <include refid="Base_Column_List" />
+    from sec_operator
+  </select>
+  <select id="findById" resultType="com.drpeng.sec.entity.SecOperator" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sec_operator
+    where OPERATOR_ID = #{id}
+  </select>
+
+</mapper>
