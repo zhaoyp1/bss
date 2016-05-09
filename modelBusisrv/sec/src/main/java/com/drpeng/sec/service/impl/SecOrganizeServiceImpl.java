@@ -19,7 +19,7 @@ public class SecOrganizeServiceImpl implements ISecOrganizeService {
     @Resource
     private ISecOrganizeDAO secOrganizeDAO;
 
-    public List<PageData> findAllSecOrganize(PageData pageData) {
+    public List<PageData> findAllSecOrganize(PageData pageData) throws NumberFormatException{
         if( null != pageData ){
             if(pageData.containsKey("startIndex")&&pageData.containsKey("pageSize")) {
                 String startindex = pageData.getString("startIndex");

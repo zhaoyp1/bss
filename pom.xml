@@ -30,6 +30,7 @@
         <com.alibaba.fastjson.version>1.1.41</com.alibaba.fastjson.version>
         <org.apache.httpcomponents.httpcore.version>4.3.3</org.apache.httpcomponents.httpcore.version>
         <org.apache.httpcomponents.version>4.3.6</org.apache.httpcomponents.version>
+        <net.sf.json-lib.version>2.4</net.sf.json-lib.version>
     </properties>
     <dependencies>
         <!--junit begin-->
@@ -62,6 +63,13 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${com.alibaba.fastjson.version}</version>
+        </dependency>
+        <!-- Json工具 -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>${net.sf.json-lib.version}</version>
+            <classifier>jdk15</classifier>
         </dependency>
     </dependencies>
     <dependencyManagement>

@@ -11,6 +11,6 @@ import java.util.Map;
  */
 public interface ISecOrganizeService {
 
-    public List<PageData> findAllSecOrganize(PageData parameterMap);
+    public List<PageData> findAllSecOrganize(PageData parameterMap) throws NumberFormatException;
 
 }
