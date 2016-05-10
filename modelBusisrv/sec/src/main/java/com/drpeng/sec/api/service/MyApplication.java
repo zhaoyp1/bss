@@ -1,6 +1,5 @@
 package com.drpeng.sec.api.service;
 
- import com.drpeng.sec.api.SecOrganizeResource;
  import org.glassfish.jersey.server.ResourceConfig;
 
 /**
@@ -9,7 +8,7 @@ package com.drpeng.sec.api.service;
 public class MyApplication extends ResourceConfig {
 
     public MyApplication(){
-      register(SecOrganizeResource.class);
-     // packages("com.drpeng.sec.api");
+      //register(SecOrganizeResource.class);
+     packages("com.drpeng.sec.api");
     }
 }

@@ -45,11 +45,17 @@
     <include refid="Base_Column_List" />
     from sec_operator
   </select>
-  <select id="findById" resultType="com.drpeng.sec.entity.SecOperator" parameterType="java.lang.Integer" >
-    select 
+  <select id="findById" resultType="com.drpeng.sec.entity.SecOperator" parameterType="java.lang.Integer">
+    select
     <include refid="Base_Column_List" />
     from sec_operator
     where OPERATOR_ID = #{id}
+  </select>
+  <select id="findByCodeAndPw" resultType="com.drpeng.sec.entity.SecOperator">
+    select
+    <include refid="Base_Column_List" />
+    from sec_operator
+    where code = #{code} and password = #{password}
   </select>
 
 </mapper>
