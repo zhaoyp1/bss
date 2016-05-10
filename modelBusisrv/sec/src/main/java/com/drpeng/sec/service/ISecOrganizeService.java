@@ -1,16 +1,16 @@
 package com.drpeng.sec.service;
 
-import com.drpeng.sec.common.PageData;
-import com.drpeng.sec.entity.SecOrganize;
+  import com.drpeng.modelCommon.common.PageData;
 
-import java.util.List;
-import java.util.Map;
+  import java.util.List;
 
 /**
  * Created by zhaoyp on 2016/5/5.
  */
 public interface ISecOrganizeService {
 
-    public List<PageData> findAllSecOrganize(PageData parameterMap) throws NumberFormatException;
+     List<PageData> findAllSecOrganize(PageData parameterMap) throws NumberFormatException;
+
+     PageData findSecOrganizeById(String id);
 
 }

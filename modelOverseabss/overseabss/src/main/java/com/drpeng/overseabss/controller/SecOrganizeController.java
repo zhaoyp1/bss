@@ -1,6 +1,7 @@
 package com.drpeng.overseabss.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.drpeng.overseabss.common.InitServlet;
 import com.drpeng.overseabssCommon.frame.base.BaseController;
 import com.drpeng.overseabssCommon.frame.http.*;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,7 @@ public class SecOrganizeController extends BaseController {
         ModelAndView mv= this.getModelAndView();
         HttpProtocolHandler httpProtocolHandler = HttpProtocolHandler
                 .getInstance();
-        HttpRequest request = new HttpRequest(HttpResultType.BYTES);
+        HttpRequest request = new HttpRequest();
         //String pstr = "city=beijing";
         request.setUrl("http://127.0.0.1:8080/rest/users");
         /*request.setQueryString(pstr);

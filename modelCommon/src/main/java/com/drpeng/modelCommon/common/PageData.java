@@ -1,4 +1,4 @@
-package com.drpeng.sec.common;
+package com.drpeng.modelCommon.common;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
@@ -57,6 +57,21 @@ public class PageData extends HashMap implements Map, Serializable {
 		}
 		return obj;
 	}
+
+	public void checkPageParameter() {
+
+			if(this.containsKey("startIndex") && this.containsKey("pageSize")) {
+				String startindex = this.getString("startIndex");
+				String pagesize = this.getString("pageSize");
+				if(!"".equals(startindex)&&!"".equals(pagesize)) {
+					int startIndex = Integer.parseInt(startindex);
+					int pageSize = Integer.parseInt(pagesize);
+					this.put("startIndex", startIndex);
+					this.put("pageSize", pageSize);
+				}
+			}
+
+ 	}
 
 	public String getString(Object key) {
 		return (String) get(key);

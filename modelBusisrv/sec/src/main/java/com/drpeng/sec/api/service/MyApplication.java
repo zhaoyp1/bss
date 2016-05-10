@@ -9,6 +9,6 @@ public class MyApplication extends ResourceConfig {
 
     public MyApplication(){
       //register(SecOrganizeResource.class);
-     packages("com.drpeng.sec.api");
+      packages("com.drpeng.sec.api");
     }
 }
