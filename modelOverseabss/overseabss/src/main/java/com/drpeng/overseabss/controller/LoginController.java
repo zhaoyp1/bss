@@ -1,5 +1,6 @@
 package com.drpeng.overseabss.controller;
 
+import com.drpeng.overseabss.common.SystemConstants;
 import com.drpeng.overseabssCommon.frame.base.BaseController;
 import com.drpeng.overseabssCommon.frame.http.HttpProtocolHandler;
 import com.drpeng.overseabssCommon.frame.http.HttpRequest;
@@ -33,16 +34,13 @@ public class LoginController extends BaseController {
         String userName = request1.getParameter("userName");
         String password = request1.getParameter("password");
 
-        System.out.println("userName======"+userName);
-        System.out.println("password======"+password);
-
         HttpProtocolHandler httpProtocolHandler = HttpProtocolHandler.getInstance();
         HttpRequest request = new HttpRequest(HttpResultType.BYTES);
         HttpResponse response = null;
         String parameter = "userName="+userName+"&password="+password;
         request.setQueryString(parameter);
         if((null!=userName && !"".equals(userName)) && (null!=password && !"".equals(password))){
-            request.setUrl("http://localhost:8080/rest/operators");
+            request.setUrl(SystemConstants.API_OPERATOR);
             response = httpProtocolHandler.sendGet(request);
         }else{
             mv.setViewName("login");
@@ -51,8 +49,6 @@ public class LoginController extends BaseController {
 
         try{
             String result = response.getStringResult();
-            System.out.println("result============"+result+"========");
-            System.out.println(null==result || "null".equals(result));
             if(null==response || null==result || "null".equals(result)){
                 mv.setViewName("login");
             }else{
