@@ -25,7 +25,7 @@ public class InitServlet {
         HttpProtocolHandler httpProtocolHandler = HttpProtocolHandler
                 .getInstance();
         HttpRequest request = new HttpRequest(HttpResultType.BYTES);
-        request.setUrl(SystemConstants.API_ROEL_FUNCTIONS_URL);
+        request.setUrl(SystemConstants.API_ROLE_FUNCTIONS_URL);
         Map<String, String> properties = new HashMap<String, String>();
         request.setParameters(HttpClientUtil.generatNameValuePair(properties));
         try{
