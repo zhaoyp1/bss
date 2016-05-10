@@ -1,7 +1,7 @@
 package com.drpeng.sec.service.impl;
 
-import com.drpeng.sec.common.PageData;
-import com.drpeng.sec.dao.ISecOrganizeDAO;
+ import com.drpeng.modelCommon.common.PageData;
+ import com.drpeng.sec.dao.ISecOrganizeDAO;
 import com.drpeng.sec.entity.SecOrganize;
 import com.drpeng.sec.service.ISecOrganizeService;
 import org.springframework.stereotype.Service;
@@ -21,21 +21,21 @@ public class SecOrganizeServiceImpl implements ISecOrganizeService {
 
     public List<PageData> findAllSecOrganize(PageData pageData) throws NumberFormatException{
         if( null != pageData ){
-            if(pageData.containsKey("startIndex")&&pageData.containsKey("pageSize")) {
-                String startindex = pageData.getString("startIndex");
-                String pagesize = pageData.getString("pageSize");
-                if(!"".equals(startindex)&&!"".equals(pagesize)) {
-                    int startIndex = Integer.parseInt(startindex);
-                    int pageSize = Integer.parseInt(pagesize);
-                    pageData.put("startIndex", startIndex);
-                    pageData.put("pageSize", pageSize);
-                }
-            }
-        }else{
-            pageData = new PageData();
+            pageData.checkPageParameter();
         }
         List<PageData> pageDatas = secOrganizeDAO.organizeList(pageData);
         return pageDatas;
 
+    }
+
+
+
+    public PageData findSecOrganizeById(String id) {
+
+        if( null == id || "".equals(id)){
+            throw new  IllegalArgumentException("id must not be null");
+        }
+        PageData pageData = secOrganizeDAO.findById(id);
+        return pageData;
     }
 }

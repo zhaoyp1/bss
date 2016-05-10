@@ -1,8 +1,8 @@
 package com.drpeng.sec.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.drpeng.sec.common.PageData;
-import com.drpeng.sec.entity.SecOrganize;
+import com.alibaba.fastjson.JSONObject;
+import com.drpeng.modelCommon.common.PageData;
 import com.drpeng.sec.service.ISecOrganizeService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,6 +32,11 @@ public class SecOrganizeServiceImplTest {
         //pageDate.put("pageSize","2");
         List<PageData> secOrganizeList= secOrganizeService.findAllSecOrganize(pageDate);
         logger.info(JSON.toJSONString(secOrganizeList));
+    }
+    @Test
+    public void findSecOrganizeById(){
+        PageData pageDate =secOrganizeService.findSecOrganizeById("1");
+        logger.info(JSONObject.toJSONString(pageDate));
     }
 
 }

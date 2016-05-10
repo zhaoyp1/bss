@@ -97,6 +97,10 @@ public class HttpRequest {
         super();
         this.resultType = resultType;
     }
+    public HttpRequest() {
+        super();
+        this.resultType = HttpResultType.BYTES;
+    }
 
     public String getClientIp() {
         return clientIp;

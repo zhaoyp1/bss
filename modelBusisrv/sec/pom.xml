@@ -12,6 +12,10 @@
     <url>http://maven.apache.org</url>
     <dependencies>
 
+        <dependency>
+            <groupId>com.drpeng</groupId>
+            <artifactId>modelCommon</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <finalName>sec</finalName>

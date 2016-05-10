@@ -8,20 +8,31 @@
     CONTACT_CARD_ID, CONTACT_BILL_ID, ORG_LEVEL, IS_CHANNEL, NOTES, STATE, DONE_CODE, 
     CREATE_DATE, DONE_DATE, VALID_DATE, EXPIRE_DATE, OP_ID, ORG_ID
   </sql>
-   <select id="organizeList" parameterType="com.drpeng.sec.common.PageData" resultType="com.drpeng.sec.common.PageData">
+   <select id="organizeList" parameterType="pd" resultType="pd">
       SELECT
 
        <include refid="Base_Column_List" />
 
        FROM SEC_ORGANIZE WHERE 1=1
        <if test="ORGANIZE_NAME != null and ORGANIZE_NAME != '' ">
-         AND ORGANIZE_NAME LIKE #{ORGANIZE_NAME}
+         AND ORGANIZE_NAME LIKE #{organizeName}
        </if>
        <if test="PARENT_ORGANIZE_ID != null ">
-         AND PARENT_ORGANIZE_ID = ${PARENT_ORGANIZE_ID}
+         AND PARENT_ORGANIZE_ID = ${parentId}
        </if>
        <if test="startIndex != null and pageSize != null">
          LIMIT #{startIndex},#{pageSize}
        </if>
    </select>
+    <select id="findById" parameterType="java.lang.String" resultType="pd">
+
+        SELECT
+          <include refid="Base_Column_List" />
+
+        FROM
+          SEC_ORGANIZE
+        WHERE 1=1
+
+          AND ORGANIZE_ID = #{ID}
+    </select>
 </mapper>

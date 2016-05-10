@@ -8,10 +8,11 @@
     <name>bss Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <modules>
+        <module>modelCommon</module>
         <module>modelBusisrv</module>
         <module>modelIntersrv</module>
         <module>modelOverseabss</module>
-        <module>modelCommon</module>
+
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

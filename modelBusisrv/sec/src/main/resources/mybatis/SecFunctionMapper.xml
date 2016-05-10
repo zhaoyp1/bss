@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drpeng.sec.dao.ISecFunctionDAO" >
+
+  <sql id="Base_Column_List">
+    FUNC_ID, ENT_CLASS_ID, FUNC_CODE, NAME, NOTES, PARENT_ID, FUN_SEQ, VIEWNAME, DLL_PATHDLL,
+    FUNC_IMG, FUNC_ARG, FUNC_TYPE, STATE, DONE_CODE, CREATE_DATE, DONE_DATE, VALID_DATE,
+    EXPIRE_DATE, OP_ID, ORG_ID
+  </sql>
+
+  <select id="findSecFunctionByRole" resultType="pd" parameterType="pd">
+     SELECT
+        ROLE.ROLE_ID ROLE_ID ,FUN.*
+     FROM
+       SEC_FUNCTION FUN ,SEC_ROLE_GRANT ROLEGRANT ,SEC_ROLE ROLE
+     WHERE
+
+        1 = 1 AND FUN.FUNC_ID = ROLEGRANT.ENT_ID AND ROLEGRANT.ENT_TYPE = 'F' AND ROLEGRANT.ROLE_ID = ROLE.ROLE_ID
+
+     AND FUN.STATE = 0 AND ROLEGRANT.STATE = 0 AND ROLE.STATE = 0
+     <if test="role_id != null ">
+
+       AND ROLE.ROLE_ID = #{role_id}
+
+     </if>
+
+  </select>
+  <select id="findSecFunctionById" resultType="pd" parameterType="java.lang.String">
+    SELECT
+      <include refid="Base_Column_List" />
+    FROM  SEC_FUNCTION
+    WHERE 1 = 1
+    AND STATE = 0
+    AND FUNC_ID = #{functionId}
+  </select>
+  <select id="findAllSecFunction" resultType="pd" parameterType="pd">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM  SEC_FUNCTION
+    WHERE 1 = 1
+    AND STATE = 0
+    <if test="name != null and name != '' ">
+      AND NAME LIKE #{name}
+    </if>
+    <if test="parentId != null ">
+      AND PARENT_ID = ${parentId}
+    </if>
+    <if test="startIndex != null and pageSize != null">
+      LIMIT #{startIndex},#{pageSize}
+    </if>
+  </select>
+
+
+</mapper>

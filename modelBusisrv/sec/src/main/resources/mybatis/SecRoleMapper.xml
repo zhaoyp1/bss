@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drpeng.sec.dao.ISecRoleDAO" >
+
+    <sql id="Base_Column_List">
+        ROLE_ID, ROLE_NAME, ROLE_TYPE, NOTES, STATE, DONE_CODE, CREATE_DATE, DONE_DATE, VALID_DATE,
+        EXPIRE_DATE, OP_ID, ORG_ID
+    </sql>
+
+   <select id="findRoleListByOperator" parameterType="pd" resultType="pd">
+      SELECT
+
+        ROLE.*
+
+       FROM
+
+           SEC_STAFF STAFF,SEC_OPERATOR OP ,SEC_OP_ROLE OP_ROLE,SEC_ROLE ROLE
+
+       WHERE 1=1
+
+       AND STAFF.STAFF_ID = OP.OPERATOR_ID
+       AND OP.OPERATOR_ID = OP_ROLE.OPERATOR_ID
+       AND ROLE.ROLE_ID = OP_ROLE.ROLE_ID
+       AND ROLE.STATE = 0
+       AND OP_ROLE.STATE = 0
+       <if test="staff_id != null  ">
+         AND STAFF.STAFF_ID = #{staff_id}
+       </if>
+       <if test="staff_name != null and staff_name != ''">
+         AND STAFF.STAFF_NAME = #{staff_name}
+       </if>
+       <if test="operator_id != null">
+           AND OP.OPERATOR_ID = #{operator_id}
+       </if>
+       <if test="code != null">
+           AND OP.`CODE` = #{code}
+       </if>
+   </select>
+    <select id="findRoleList" resultType="pd">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM
+        SEC_ROLE
+        WHERE STATE = 0 ;
+    </select>
+</mapper>
